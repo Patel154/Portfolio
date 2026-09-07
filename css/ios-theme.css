@@ -92,11 +92,18 @@ img { max-width: 100%; display: block; }
 .site-nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
-  background: var(--glass);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.3s var(--ease);
+  background: rgba(18, 18, 20, 0.65);
+  backdrop-filter: blur(25px) saturate(190%) contrast(105%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%) contrast(105%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+[data-theme="light"] .site-nav {
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
 }
 
 .nav-inner {
