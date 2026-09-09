@@ -1,221 +1,806 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monil Patel — Software Engineer</title>
-  <meta name="description" content="Monil Patel is a Computer Science Engineering student at Jain University, Bengaluru. Full-Stack, Android, and IoT builder with 7+ production projects and 2 national hackathon finals.">
-  <link rel="stylesheet" href="css/ios-theme.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-</head>
-<body>
 
-  <!-- Navigation -->
-  <nav class="site-nav">
+  <title>Monil Patel — Software Engineer</title>
+
+  <meta
+    name="description"
+    content="Monil Patel — Computer Science Engineering student at Jain University, Bengaluru. Explore my projects, internships, and skills across full-stack development, Android, AI, and IoT."
+  >
+
+  <meta name="author" content="Monil Patel">
+
+  <link rel="stylesheet" href="css/ios-theme.css">
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='stripes' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%235bbb43'/%3E%3Cstop offset='.125' stop-color='%235bbb43'/%3E%3Cstop offset='.125' stop-color='%2368c448'/%3E%3Cstop offset='.25' stop-color='%2368c448'/%3E%3Cstop offset='.25' stop-color='%23ffbd2e'/%3E%3Cstop offset='.375' stop-color='%23ffbd2e'/%3E%3Cstop offset='.375' stop-color='%23f9a825'/%3E%3Cstop offset='.5' stop-color='%23f9a825'/%3E%3Cstop offset='.5' stop-color='%23f57c20'/%3E%3Cstop offset='.625' stop-color='%23f57c20'/%3E%3Cstop offset='.625' stop-color='%23ef5350'/%3E%3Cstop offset='.75' stop-color='%23ef5350'/%3E%3Cstop offset='.75' stop-color='%239b3fa0'/%3E%3Cstop offset='.875' stop-color='%239b3fa0'/%3E%3Cstop offset='.875' stop-color='%230da4d8'/%3E%3Cstop offset='1' stop-color='%230da4d8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='73' text-anchor='middle' font-family='Arial,sans-serif' font-size='58' font-weight='bold' fill='url(%23stripes)'%3EMP%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Small accessibility additions and loading fallbacks. -->
+  <style>
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #153857;
+      font: 600 14px/1.4 system-ui, sans-serif;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .content-placeholder {
+      grid-column: 1 / -1;
+      padding: 20px;
+      border: 1px solid var(--border, #9baec5);
+      border-radius: 14px;
+      color: var(--text-2, #4b5d74);
+      font-size: .85rem;
+      line-height: 1.7;
+    }
+
+    .no-script-notice {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #c49337;
+      border-radius: 12px;
+      background: #fff2cd;
+      color: #573e16;
+      line-height: 1.7;
+    }
+
+    /* Closed dialogs must stay hidden, even before CSS finishes loading. */
+    .sheet-overlay[hidden],
+    .terminal-overlay[hidden] {
+      display: none !important;
+    }
+  </style>
+
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <a href="#mainContent" class="skip-link">Skip to content</a>
+
+  <!-- ==================== TOP MENU ==================== -->
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Monil Patel</a>
+      <a href="#hero" class="nav-logo">Monil Patel</a>
+
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
+
       <div class="nav-actions">
-        <button class="nav-icon-btn trigger-terminal" title="Terminal ⌘K" aria-label="Open terminal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg>
+        <button
+          type="button"
+          class="nav-icon-btn trigger-terminal"
+          title="Open terminal — Cmd/Ctrl+K"
+          aria-label="Open interactive terminal"
+          aria-haspopup="dialog"
+          aria-controls="termOverlay"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m4 5 6 6-6 6"></path>
+            <path d="M13 19h7"></path>
+          </svg>
         </button>
-        <button class="nav-icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+
+        <button
+          type="button"
+          class="nav-icon-btn"
+          id="themeToggle"
+          title="Switch to dark appearance"
+          aria-label="Switch to dark appearance"
+        >
+          <span aria-hidden="true" style="font-size: 20px;">☾</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <main>
+  <noscript>
+    <div class="no-script-notice">
+      This portfolio uses JavaScript to display projects, skills, and
+      experience, and to run the interactive terminal. Please enable
+      JavaScript, or explore my work on
+      <a
+        href="https://github.com/Patel154"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+      and
+      <a
+        href="https://www.linkedin.com/in/monil-patel-946845255/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a>.
+    </div>
+  </noscript>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="wrap">
-        <p class="hero-eyebrow">
-          <span class="dot"></span>
-          Available for opportunities
-        </p>
-        <h1>
-          I build software<br>
-          that <span class="gradient">ships.</span>
-        </h1>
-        <p class="hero-sub">
-          CS Engineering student at Jain University, Bengaluru.
-          Full-stack web, native Android, and IoT systems —
-          from idea to production.
-        </p>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn-primary">
-            View Projects
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+  <main id="mainContent" tabindex="-1">
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="wrap hero-layout">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            Available for opportunities
+          </p>
+
+          <p class="hero-kicker">
+            A little nostalgic. A lot of possibility.
+          </p>
+
+          <h1 id="heroTitle">
+            hello<span class="hello-period">.</span>
+          </h1>
+
+          <h2 class="hero-intro">
+            I’m Monil.<br>
+            I build things that <em>work.</em>
+          </h2>
+
+          <p class="hero-sub">
+            CS Engineering student in Bengaluru. Turning ideas into
+            full-stack experiences, Android apps, AI tools, and
+            connected things.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn-primary">
+              Explore my work
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="#contact" class="btn-ghost">
+              Let’s talk
+            </a>
+          </div>
+
+          <p class="hero-footnote">
+            Made of curiosity, code, and a few late nights.
+          </p>
+        </div>
+
+        <!-- Retro developer window -->
+        <div class="hero-desktop">
+          <div class="desktop-caption">
+            <span>MONIL’S DESKTOP</span>
+            <span>PERSONAL EDITION</span>
+          </div>
+
+          <article
+            class="about-window"
+            aria-labelledby="aboutDeveloperTitle"
+          >
+            <header class="window-bar">
+              <span class="window-lights" aria-hidden="true">
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+
+              <span>About this developer</span>
+              <span aria-hidden="true">⌘</span>
+            </header>
+
+            <div class="about-window-body">
+              <div class="retro-computer" aria-hidden="true">
+                <div class="computer-screen">
+                  <span class="computer-face">:)</span>
+                  <span class="screen-caption">nice to meet you</span>
+                </div>
+
+                <div class="computer-chin">
+                  <span class="rainbow-mark"></span>
+                  <span class="floppy-slot"></span>
+                </div>
+              </div>
+
+              <h3 id="aboutDeveloperTitle">Monil Patel</h3>
+
+              <p class="about-role">
+                Software engineer in the making.
+              </p>
+
+              <dl class="system-specs">
+                <div>
+                  <dt>Location</dt>
+                  <dd>Bengaluru, India</dd>
+                </div>
+
+                <div>
+                  <dt>University</dt>
+                  <dd>Jain University</dd>
+                </div>
+
+                <div>
+                  <dt>Speciality</dt>
+                  <dd>Ideas → shipped software</dd>
+                </div>
+
+                <div>
+                  <dt>Status</dt>
+                  <dd class="status-ready">Ready to build something</dd>
+                </div>
+              </dl>
+
+              <button
+                type="button"
+                class="system-button trigger-terminal"
+                aria-haspopup="dialog"
+                aria-controls="termOverlay"
+              >
+                Open Terminal
+                <kbd>⌘ K</kbd>
+              </button>
+            </div>
+
+            <footer class="window-status">
+              <span class="status-light" aria-hidden="true"></span>
+              All systems curious.
+              <span class="window-version">Personal edition</span>
+            </footer>
+          </article>
+
+          <a href="#projects" class="desktop-note">
+            <span aria-hidden="true">✦</span>
+
+            <span>
+              Small details.<br>
+              <strong>Real-world impact.</strong>
+            </span>
+
+            <span aria-hidden="true">↗</span>
           </a>
-          <a href="#contact" class="btn-ghost">Get in Touch</a>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="wrap">
-      <div class="stats-row">
-        <div class="stat-cell">
-          <span class="stat-val blue">7+</span>
-          <span class="stat-label">Projects Shipped</span>
+    <!-- ==================== TERMINAL SPOTLIGHT ==================== -->
+    <!-- Replaces the old project-count / CGPA stats bar. -->
+    <section
+      class="wrap terminal-spotlight"
+      aria-labelledby="terminalSpotlightTitle"
+    >
+      <div class="terminal-spotlight-panel">
+        <div class="terminal-spotlight-icon" aria-hidden="true">›_</div>
+
+        <div class="terminal-spotlight-copy">
+          <p class="section-label">Not your usual portfolio</p>
+
+          <h2 id="terminalSpotlightTitle">
+            Meet me through the terminal.
+          </h2>
+
+          <p>
+            Explore my projects, experience, and skills with a few commands.
+            No coding knowledge needed.
+          </p>
         </div>
-        <div class="stat-cell">
-          <span class="stat-val green">2×</span>
-          <span class="stat-label">National Finalist</span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-val purple">3</span>
-          <span class="stat-label">Internships</span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-val orange">8.42</span>
-          <span class="stat-label">CGPA / 10</span>
-        </div>
+
+        <button
+          type="button"
+          class="btn-primary trigger-terminal"
+          aria-haspopup="dialog"
+          aria-controls="termOverlay"
+        >
+          Try it now
+          <span aria-hidden="true">↗</span>
+        </button>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="wrap" id="projects">
+    <!-- ==================== PROJECTS ==================== -->
+    <section
+      class="wrap"
+      id="projects"
+      aria-labelledby="projectsTitle"
+    >
       <div class="section-header">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-sub">Production-grade software across web, mobile, AI, and embedded systems.</p>
+        <p class="section-label">01 / The project folder</p>
+
+        <h2 class="section-title" id="projectsTitle">
+          Selected Projects
+        </h2>
+
+        <p class="section-sub">
+          From browser tabs to circuit boards. A collection of things
+          I’ve built across web, mobile, AI, and embedded systems.
+        </p>
       </div>
 
+      <!-- Filters and project cards are populated by js/app.js. -->
       <div class="filter-bar" id="filterBar"></div>
-      <div class="projects-grid" id="projectsGrid"></div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <p class="content-placeholder">
+          Projects load here when JavaScript is available.
+          You can also
+          <a
+            href="https://github.com/Patel154"
+            target="_blank"
+            rel="noopener noreferrer"
+          >visit my GitHub profile ↗</a>.
+        </p>
+      </div>
     </section>
 
-    <!-- Skills -->
-    <section class="wrap skills-section" id="skills">
+    <!-- ==================== SKILLS ==================== -->
+    <section
+      class="wrap skills-section"
+      id="skills"
+      aria-labelledby="skillsTitle"
+    >
       <div class="section-header">
-        <p class="section-label">Capabilities</p>
-        <h2 class="section-title">Skills & Tools</h2>
-        <p class="section-sub">Core proficiencies across full-stack, mobile, AI, and embedded development.</p>
+        <p class="section-label">02 / System capabilities</p>
+
+        <h2 class="section-title" id="skillsTitle">
+          My everyday toolkit.
+        </h2>
+
+        <p class="section-sub">
+          The languages, frameworks, and hardware I reach for
+          when an idea is ready to become something real.
+        </p>
       </div>
 
       <div class="skills-rings-row" id="ringsRow"></div>
-      <div class="skill-groups" id="skillGroups"></div>
+
+      <div class="skill-groups" id="skillGroups">
+        <p class="content-placeholder">
+          My toolkit includes React, Next.js, TypeScript, Python,
+          Flask, Kotlin, Firebase, ESP32, and Raspberry Pi.
+          Enable JavaScript to explore the complete collection.
+        </p>
+      </div>
     </section>
 
-    <!-- Experience -->
-    <section class="wrap exp-section" id="experience">
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section
+      class="wrap exp-section"
+      id="experience"
+      aria-labelledby="experienceTitle"
+    >
       <div class="section-header">
-        <p class="section-label">Experience</p>
-        <h2 class="section-title">Work & Internships</h2>
-      </div>
-      <div class="exp-list" id="expList"></div>
+        <p class="section-label">03 / Version history</p>
 
+        <h2 class="section-title" id="experienceTitle">
+          Learning by building.
+        </h2>
+
+        <p class="section-sub">
+          Internships, collaborations, and hands-on experience
+          beyond the classroom.
+        </p>
+      </div>
+
+      <div class="exp-list" id="expList">
+        <p class="content-placeholder">
+          Experience at Jain Launchpad, TribeMe, and RTsense.
+          Enable JavaScript to view the internship details, or visit
+          <a
+            href="https://www.linkedin.com/in/monil-patel-946845255/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >my LinkedIn profile ↗</a>.
+        </p>
+      </div>
+
+      <!-- Education -->
       <div style="margin-top: 4rem;">
         <div class="section-header">
           <p class="section-label">Education</p>
           <h2 class="section-title">Academic Background</h2>
         </div>
-        <div class="edu-grid" id="eduGrid"></div>
+
+        <div class="edu-grid" id="eduGrid">
+          <p class="content-placeholder">
+            B.Tech in Computer Science Engineering at Jain University,
+            Bengaluru, and a Diploma in ICT from Marwadi University.
+          </p>
+        </div>
       </div>
 
+      <!-- Awards -->
       <div style="margin-top: 4rem;">
         <div class="section-header">
-          <p class="section-label">Recognition</p>
-          <h2 class="section-title">Hackathon Awards</h2>
+          <p class="section-label">A few proud moments</p>
+
+          <h2 class="section-title">
+            Hackathons & Recognition
+          </h2>
         </div>
-        <div class="awards-grid" id="awardsGrid"></div>
+
+        <div class="awards-grid" id="awardsGrid">
+          <p class="content-placeholder">
+            INCEPTRIX 2026, NavaNIEti 2026, and CRCE 2025.
+            Enable JavaScript to view the details.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="wrap contact-section" id="contact">
+    <!-- ==================== CONTACT ==================== -->
+    <section
+      class="wrap contact-section"
+      id="contact"
+      aria-labelledby="contactTitle"
+    >
       <div class="section-header">
-        <p class="section-label">Connect</p>
-        <h2 class="section-title">Let's work together.</h2>
-        <p class="section-sub">I'm always open to discussing new opportunities, projects, and ideas.</p>
+        <p class="section-label">04 / You’ve got mail</p>
+
+        <h2 class="section-title" id="contactTitle">
+          Great things start with hello.
+        </h2>
+
+        <p class="section-sub">
+          Have an opportunity, a project, or an interesting idea?
+          I’d love to hear about it.
+        </p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-info">
-          <h3>Reach me at</h3>
+          <h3>Find me on the internet.</h3>
+
           <div class="contact-links">
-            <a href="mailto:monilpatel154@gmail.com" class="contact-link-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-              monilpatel154@gmail.com
+            <!-- Email -->
+            <a
+              href="mailto:monilpatel154@gmail.com"
+              class="contact-link-item"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                <path d="m3 6 9 7 9-7"></path>
+              </svg>
+
+              <span>monilpatel154@gmail.com</span>
             </a>
-            <a href="tel:+918849740412" class="contact-link-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              +91 88497 40412
+
+            <!-- Phone -->
+            <a
+              href="tel:+918849740412"
+              class="contact-link-item"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="6" y="2" width="12" height="20" rx="3"></rect>
+                <path d="M10 5h4"></path>
+                <path d="M11 18h2"></path>
+              </svg>
+
+              <span>+91 88497 40412</span>
             </a>
-            <a href="https://github.com/Patel154" target="_blank" rel="noopener" class="contact-link-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub / Patel154
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/Patel154"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m8 5-6 7 6 7"></path>
+                <path d="m16 5 6 7-6 7"></path>
+                <path d="m14 3-4 18"></path>
+              </svg>
+
+              <span>GitHub / Patel154 ↗</span>
             </a>
-            <a href="https://www.linkedin.com/in/monil-patel-946845255/" target="_blank" rel="noopener" class="contact-link-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              LinkedIn Profile
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/monil-patel-946845255/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <path d="M7 10v7"></path>
+                <path d="M7 7h.01"></path>
+                <path d="M11 17v-7"></path>
+                <path d="M11 13a3 3 0 0 1 6 0v4"></path>
+              </svg>
+
+              <span>LinkedIn Profile ↗</span>
             </a>
           </div>
         </div>
+
+        <!-- The JavaScript creates a populated mailto draft.
+             This form does not send messages through a server. -->
         <div>
           <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your email" required>
-            <textarea placeholder="Tell me about your project or opportunity..." rows="4"></textarea>
-            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+            <label for="contactName">Your name</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              placeholder="What should I call you?"
+              autocomplete="name"
+              maxlength="120"
+              required
+            >
+
+            <label for="contactEmail">Your email</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="254"
+              required
+            >
+
+            <label for="contactMessage">Your message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              placeholder="Tell me about your project or opportunity..."
+              rows="5"
+              maxlength="4000"
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              class="btn-primary"
+              style="width: 100%; justify-content: center;"
+            >
+              Create email draft ↗
+            </button>
+
+            <!-- app.js adds the draft explanation and status message. -->
           </form>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
+  <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-links">
-        <a href="https://github.com/Patel154" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/monil-patel-946845255/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:monilpatel154@gmail.com">Email</a>
+        <a
+          href="https://github.com/Patel154"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/monil-patel-946845255/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a href="mailto:monilpatel154@gmail.com">
+          Email
+        </a>
+
+        <a href="#hero">
+          Back to top ↑
+        </a>
       </div>
-      <p class="footer-copy">© <span id="year"></span> Monil Patel · Bengaluru, India</p>
+
+      <p class="footer-copy">
+        © <span id="year">2026</span> Monil Patel · Bengaluru, India
+      </p>
+
+      <p class="footer-copy" style="margin-top: 8px;">
+        Old-school soul. Modern toolset.
+      </p>
     </div>
   </footer>
 
-  <!-- Project Detail Sheet -->
-  <div class="sheet-overlay" id="sheetOverlay">
-    <div class="sheet" style="position: relative;">
-      <div class="sheet-pill"></div>
-      <button class="sheet-close" id="sheetClose">×</button>
+  <!-- ==================== PROJECT DIALOG ==================== -->
+  <div
+    class="sheet-overlay"
+    id="sheetOverlay"
+    aria-hidden="true"
+    hidden
+  >
+    <div
+      class="sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project details"
+      tabindex="-1"
+      style="position: relative;"
+    >
+      <div class="sheet-pill" aria-hidden="true"></div>
+
+      <button
+        type="button"
+        class="sheet-close"
+        id="sheetClose"
+        aria-label="Close project details"
+      >
+        ×
+      </button>
+
+      <!-- Populated when a project’s View details button is clicked. -->
       <div id="sheetBody"></div>
     </div>
   </div>
 
-  <!-- Terminal -->
-  <div class="terminal-overlay" id="termOverlay">
-    <div class="terminal">
-      <div class="term-bar">
+  <!-- ==================== TERMINAL DIALOG ==================== -->
+  <div
+    class="terminal-overlay"
+    id="termOverlay"
+    aria-hidden="true"
+    hidden
+  >
+    <div
+      class="terminal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="terminalTitle"
+      tabindex="-1"
+    >
+      <header class="term-bar">
         <div class="term-dots">
-          <span class="term-dot td-r" id="termClose"></span>
-          <span class="term-dot td-y"></span>
-          <span class="term-dot td-g"></span>
+          <button
+            type="button"
+            class="term-dot td-r"
+            id="termClose"
+            aria-label="Close terminal"
+          ></button>
+
+          <span class="term-dot td-y" aria-hidden="true"></span>
+          <span class="term-dot td-g" aria-hidden="true"></span>
         </div>
-        <span class="term-label">monil — zsh</span>
+
+        <span class="term-label" id="terminalTitle">
+          monil — interactive terminal
+        </span>
+
         <span class="term-label">esc</span>
+      </header>
+
+      <div
+        class="term-body"
+        id="termBody"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+        aria-label="Terminal output"
+      >
+        <div class="term-line">
+          Welcome to Monil OS. Type help to begin.
+        </div>
       </div>
-      <div class="term-body" id="termBody">
-        <div class="term-line" style="color: #2997ff;">Welcome. Type <b style="color: #ffd60a;">help</b> for commands.</div>
-      </div>
+
+      <!-- app.js inserts clickable command shortcuts here. -->
+
       <div class="term-input-row">
-        <span class="term-prompt">~$</span>
-        <input type="text" class="term-input" id="termInput" placeholder="Type a command..." autocomplete="off" spellcheck="false">
+        <span class="term-prompt" aria-hidden="true">~$</span>
+
+        <input
+          type="text"
+          class="term-input"
+          id="termInput"
+          placeholder="Type help and press Enter..."
+          aria-label="Terminal command"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          enterkeyhint="go"
+        >
       </div>
     </div>
   </div>
 
-  <script src="js/app.js"></script>
+  <!-- ==================== FLOATING GLASS DOCK ==================== -->
+  <nav class="desktop-dock" aria-label="Portfolio shortcuts">
+    <a href="#hero" class="dock-item" aria-label="Home">
+      <span class="dock-icon dock-finder" aria-hidden="true">:)</span>
+      <span class="dock-tooltip">Home</span>
+    </a>
+
+    <a href="#projects" class="dock-item" aria-label="Projects">
+      <span class="dock-icon dock-projects" aria-hidden="true">▦</span>
+      <span class="dock-tooltip">Projects</span>
+    </a>
+
+    <a href="#skills" class="dock-item" aria-label="Skills">
+      <span class="dock-icon dock-skills" aria-hidden="true">✳</span>
+      <span class="dock-tooltip">Skills</span>
+    </a>
+
+    <a href="#experience" class="dock-item" aria-label="Experience">
+      <span class="dock-icon dock-experience" aria-hidden="true">◷</span>
+      <span class="dock-tooltip">Experience</span>
+    </a>
+
+    <span class="dock-divider" aria-hidden="true"></span>
+
+    <button
+      type="button"
+      class="dock-item trigger-terminal"
+      aria-label="Open interactive terminal"
+      aria-haspopup="dialog"
+      aria-controls="termOverlay"
+    >
+      <span class="dock-icon dock-terminal" aria-hidden="true">›_</span>
+      <span class="dock-tooltip">Try Terminal</span>
+    </button>
+
+    <a href="#contact" class="dock-item" aria-label="Contact">
+      <span class="dock-icon dock-mail" aria-hidden="true">✉</span>
+      <span class="dock-tooltip">Say hello</span>
+    </a>
+  </nav>
 </body>
 </html>
