@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="glass" x1="12" y1="2" x2="48" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41516a"/><stop offset="1" stop-color="#202e44"/>
+    </linearGradient>
+    <linearGradient id="rainbow" x1="4" y1="0" x2="58" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78b82a"/><stop offset=".1667" stop-color="#78b82a"/>
+      <stop offset=".1667" stop-color="#ffc629"/><stop offset=".3333" stop-color="#ffc629"/>
+      <stop offset=".3333" stop-color="#f47721"/><stop offset=".5" stop-color="#f47721"/>
+      <stop offset=".5" stop-color="#dc2444"/><stop offset=".6667" stop-color="#dc2444"/>
+      <stop offset=".6667" stop-color="#a83ca4"/><stop offset=".8333" stop-color="#a83ca4"/>
+      <stop offset=".8333" stop-color="#009dd7"/><stop offset="1" stop-color="#009dd7"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#glass)" stroke="#71859e" stroke-opacity=".6"/>
+  <rect x="3" y="3" width="58" height="58" rx="15" stroke="#a9bed8" stroke-opacity=".28"/>
+  <path d="M12 9Q32 4 52 9" stroke="#a9bed8" stroke-opacity=".45" stroke-linecap="round"/>
+  <text x="8" y="40" fill="url(#rainbow)" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" font-style="italic" letter-spacing="-4">Mp</text>
+  <rect x="16" y="49" width="32" height="3" rx="1.5" fill="url(#rainbow)" opacity=".88"/>
+</svg>

@@ -9,8 +9,8 @@ A personal portfolio website built with the **Apple iOS / Cupertino design syste
 ## ✨ Features
 
 - **Apple-Inspired Design** — Inter / SF Pro typography, thin borders, generous whitespace, frosted glass nav bar, dark/light theme toggle
-- **Project Showcase** — 7 production projects with category filters (Full-Stack, AI, Android, IoT) and detail modal sheets
-- **Activity Rings** — Animated SVG skill proficiency rings inspired by Apple Fitness
+- **Project Showcase** — 5 repository-backed projects with category filters (Full-Stack, AI & Data, Android) and detail modal sheets
+- **Activity Rings** — Decorative SVG skill-domain rings inspired by Apple Fitness
 - **Interactive Terminal** — Developer CLI accessible via `Cmd+K` / `Ctrl+K` with commands like `whoami`, `projects`, `skills`, `sudo hire`
 - **Dark / Light Mode** — Instant theme switching with localStorage persistence
 - **Fully Responsive** — Optimized for mobile (375px), tablet (768px), and desktop (1440px+)
@@ -65,7 +65,7 @@ npx serve .
 |---------|-------------|
 | **Hero** | Clean headline with availability status and CTA buttons |
 | **Stats** | Key metrics — 7+ projects, 2× national finalist, 3 internships, 8.42 CGPA |
-| **Projects** | Filterable project cards with tech chips and expandable detail sheets |
+| **Projects** | Five verified project cards with source links, tech chips, and expandable detail sheets |
 | **Skills** | Animated activity rings + categorized skill chips across 5 domains |
 | **Experience** | Internship cards (Jain Launchpad, TribeMe, RTsense) |
 | **Education** | B.Tech CSE at Jain University, Diploma ICT at Marwadi University |
@@ -80,3 +80,7 @@ npx serve .
 ---
 
 **Built with care in Bengaluru, India.**
+
+## Project sources
+
+See [PROJECT_SOURCES.md](PROJECT_SOURCES.md) for the GitHub repository review, project selection decisions, verified technologies, and profile photo source.

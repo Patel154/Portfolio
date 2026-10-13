@@ -2,10 +2,8 @@
 
 /* =========================================================
    COMPLETE PORTFOLIO DATA
-   Based on the information you originally supplied.
-
-   repo is intentionally empty: individual repository URLs
-   were not supplied. GitHub profile links remain available.
+   Projects and skills verified against public GitHub sources.
+   See PROJECT_SOURCES.md for evidence and selection decisions.
    ========================================================= */
 
 const PROFILE = {
@@ -18,179 +16,230 @@ const PROFILE = {
 
 const DATA = {
   projects: [
-    {
-      id: 'vastu',
-      title: 'Vastu',
-      subtitle: 'AI Construction Marketplace',
-      category: 'fullstack',
-      tags: ['fullstack', 'ai'],
-      categoryLabel: 'Full-Stack · AI',
-      award: 'INCEPTRIX 2026 Finalist',
-      desc: 'Full-stack construction marketplace with server-side AI cost estimation, 60+ RESTful endpoints, and a 3NF-normalised relational database.',
-      tech: ['React', 'TypeScript', 'Flask', 'SQLAlchemy', 'Gemini API', 'SQLite'],
-      arch: 'React + TypeScript SPA → Flask REST API → Google Gemini Pipeline → 3NF SQLite',
-      metrics: [
-        '60+ RESTful endpoints with Flask and SQLAlchemy',
-        '3NF-normalised schema with indexed foreign keys',
-        'Real-time AI cost estimation via Google Gemini API',
-        'Selected for INCEPTRIX 2026 National Finals'
-      ],
-      repo: ''
-    },
-    {
-      id: 'skillswap',
-      title: 'SkillSwap',
-      subtitle: 'Peer Skill Exchange',
-      category: 'fullstack',
-      tags: ['fullstack'],
-      categoryLabel: 'Full-Stack · Real-time',
-      desc: 'Real-time peer skill exchange platform with sub-second messaging, fuzzy-match discovery, and JWT-backed authentication.',
-      tech: ['React', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind'],
-      arch: 'React Client → Firebase Auth → Firestore Real-Time Listeners',
-      metrics: [
-        'Sub-second chat via Firestore onSnapshot listeners',
-        'Fuzzy-match discovery with compound queries',
-        'JWT-backed Firebase Auth with route guards',
-        'Denormalized atomic writes for rating aggregation'
-      ],
-      repo: ''
-    },
-    {
-      id: 'socialz',
-      title: 'Socialz',
-      subtitle: 'Social Web Platform',
-      category: 'fullstack',
-      tags: ['fullstack'],
-      categoryLabel: 'Full-Stack · Next.js',
-      desc: 'Modern social platform built with Next.js 14 App Router, Server Components, ISR, and zero-polling live updates via Firestore.',
-      tech: ['Next.js 14', 'React', 'TypeScript', 'Firestore', 'Tailwind'],
-      arch: 'Next.js 14 App Router (RSC + ISR) → Firestore → Tailwind UI',
-      metrics: [
-        'Next.js 14 with Server Components and ISR',
-        'Zero-polling live feeds via Firestore listeners',
-        'Skeleton-loading component library',
-        'Mobile-first responsive design'
-      ],
-      repo: ''
-    },
-    {
-      id: 'quizmaster',
-      title: 'QuizMaster',
-      subtitle: 'Android Quiz App',
-      category: 'mobile',
-      tags: ['mobile'],
-      categoryLabel: 'Android · Kotlin',
-      desc: 'Category-based quiz engine with MVVM architecture, Room DB persistence, coroutine timers, and animated progress arcs.',
-      tech: ['Kotlin', 'MVVM', 'Room DB', 'LiveData', 'Coroutines', 'ViewBinding'],
-      arch: 'Single Activity → MVVM ViewModel → Repository → Room DB',
-      metrics: [
-        'MVVM with ViewModel-scoped LiveData streams',
-        'Offline persistence in Room DB with TypeConverters',
-        'ObjectAnimator circular progress rendering',
-        'Coroutine-backed timer with difficulty multipliers'
-      ],
-      repo: ''
-    },
-    {
-      id: 'nurse-call',
-      title: 'Nurse Call System',
-      subtitle: 'IoT Gesture Detection',
-      category: 'iot',
-      tags: ['iot', 'ai'],
-      categoryLabel: 'IoT · Computer Vision',
-      award: 'NavaNIEti 2026 Winner',
-      desc: 'Distributed gesture-activated IoT alert system with sub-800ms latency using ESP32, Raspberry Pi, MQTT, and MediaPipe.',
-      tech: ['C++', 'Python', 'ESP32', 'Raspberry Pi', 'MQTT', 'MediaPipe'],
-      arch: 'ESP32-CAM → Raspberry Pi MediaPipe → MQTT Broker → ESP32 GPIO Alert',
-      metrics: [
-        'Sub-800ms end-to-end gesture-to-alert latency',
-        'MQTT pub/sub across ESP32 and Raspberry Pi nodes',
-        'Real-time hand-landmark inference via MediaPipe',
-        '3-of-5 rolling-frame voting to reduce false positives'
-      ],
-      repo: ''
-    },
-    {
-      id: 'transport',
-      title: 'Multi-Transport',
-      subtitle: 'Android Routing App',
-      category: 'mobile',
-      tags: ['mobile'],
-      categoryLabel: 'Android · Maps',
-      desc: 'Multi-modal transport routing with dynamic Google Maps polylines, Room DB caching, and runtime permission handling.',
-      tech: ['Kotlin', 'MVVM', 'Navigation Component', 'Room DB', 'Maps SDK'],
-      arch: 'Single Activity Nav Graph → ViewModel → Google Maps + Room DB',
-      metrics: [
-        'Dynamic polyline overlays via Google Maps SDK',
-        'Single-activity Navigation Component graph',
-        'Offline route caching with coroutine DAO queries',
-        'Graceful degraded-mode with ActivityResult API'
-      ],
-      repo: ''
-    },
-    {
-      id: 'llm-analysis',
-      title: 'Agricultural LLM Analysis',
-      subtitle: 'Model Benchmarking',
-      category: 'ai',
-      tags: ['ai'],
-      categoryLabel: 'AI · Benchmarking',
-      desc: 'Benchmark comparing DeepSeek-R1 and Llama 3.2 across 2,200 agricultural records for accuracy, latency, and JSON reliability.',
-      tech: ['Python', 'Pandas', 'Ollama', 'DeepSeek-R1', 'Llama 3.2'],
-      arch: 'Tabular Dataset → Ollama Inference → JSON Parser → Metric Engine',
-      metrics: [
-        '2,200-record evaluation across 22 crop classes',
-        'Benchmarked DeepSeek-R1 1.5B and Llama 3.2 3B',
-        'Llama 3.2: 0% JSON errors versus DeepSeek: 6.73%',
-        'Automated batch checkpointing for zero-loss runs'
-      ],
-      repo: ''
-    }
-  ],
+  {
+    "id": "ladli",
+    "title": "LADLI Laboratory Platform",
+    "subtitle": "Website & Admin Portal",
+    "category": "fullstack",
+    "tags": [
+      "fullstack"
+    ],
+    "categoryLabel": "Full-Stack · Flask",
+    "desc": "A laboratory web platform with customer enquiries, quote requests, document downloads, visitor tracking, and an authenticated admin portal.",
+    "tech": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "Three.js",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "arch": "HTML / CSS / JavaScript frontend → Flask APIs → PostgreSQL or SQLite → SMTP notifications",
+    "metrics": [
+      "Multi-page service website with self-hosted Three.js visualizations",
+      "Admin workflows for enquiries, quotes, documents, and visitor counts",
+      "SQLite-to-PostgreSQL migration utility and connection pooling",
+      "Session authentication, CSRF protection, and email password resets"
+    ],
+    "repo": "https://github.com/Patel154/Full-stack-web-app"
+  },
+  {
+    "id": "ai-model-workspace",
+    "title": "AI Model Workspace",
+    "subtitle": "Multi-model Chat Dashboard",
+    "category": "ai",
+    "tags": [
+      "fullstack",
+      "ai"
+    ],
+    "categoryLabel": "AI · Next.js",
+    "desc": "A model-switching chat workspace with streamed responses, file attachments, Markdown rendering, and conversations saved locally in the browser.",
+    "tech": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Server-Sent Events",
+      "pdf-parse"
+    ],
+    "arch": "React / Next.js UI → server API routes → Experiential Labs API; browser localStorage for conversations",
+    "metrics": [
+      "Live model discovery and switching within a conversation",
+      "Server-side API proxy with streamed chat responses",
+      "PDF text extraction and browser-side PowerPoint parsing",
+      "Syntax-highlighted Markdown and file comparison views"
+    ],
+    "repo": "https://github.com/Patel154/ai-model-workspace"
+  },
+  {
+    "id": "customer-feedback-insight-engine",
+    "title": "Customer Feedback Insight Engine",
+    "subtitle": "Sentiment Analysis & NLP",
+    "category": "ai",
+    "tags": [
+      "ai",
+      "fullstack"
+    ],
+    "categoryLabel": "Machine Learning · NLP",
+    "desc": "A customer-feedback analysis platform combining sentiment classification, aspect-based insights, topic discovery, and a Flask dashboard for individual reviews and CSV batches.",
+    "tech": [
+      "Python",
+      "scikit-learn",
+      "NLTK",
+      "Pandas",
+      "Flask",
+      "Chart.js"
+    ],
+    "arch": "Feedback → negation-aware preprocessing → TF-IDF classifiers + LDA topic discovery → Flask dashboard",
+    "metrics": [
+      "Comparison of Naive Bayes, logistic regression, SVM, and random forest models",
+      "Negation-aware text cleaning and WordNet lemmatization",
+      "Clause-level sentiment across five customer-feedback aspects",
+      "Bulk CSV analysis, interactive charts, and enriched exports"
+    ],
+    "repo": "https://github.com/Patel154/customer-feedback-insight-engine"
+  },
+  {
+    "id": "skillswap",
+    "title": "SkillSwap",
+    "subtitle": "Student Skill Exchange",
+    "category": "fullstack",
+    "tags": [
+      "fullstack"
+    ],
+    "categoryLabel": "Full-Stack · PHP",
+    "desc": "A student platform for offering skills, finding matches, requesting swaps, messaging peers, and leaving reviews. The final project within the Web Technologies repository.",
+    "tech": [
+      "PHP",
+      "MySQL",
+      "PDO",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "arch": "PHP pages + JavaScript / CSS → session authentication → PDO → MySQL",
+    "metrics": [
+      "Skill listings, category search, and matching suggestions",
+      "Swap requests, messaging, notifications, and reviews",
+      "Wanted-skills board and user profiles",
+      "Admin dashboards for users, skills, categories, and reports"
+    ],
+    "repo": "https://github.com/Patel154/Small-Projects-of-WT/tree/main/WT%20Final%20Project"
+  },
+  {
+    "id": "retinabridge",
+    "title": "RetinaBridge",
+    "subtitle": "Diabetic Retinopathy Research Prototype",
+    "category": "ai",
+    "tags": [
+      "ai",
+      "mobile"
+    ],
+    "categoryLabel": "Research · Android Client",
+    "desc": "A local retinal-image research prototype connecting a browser dashboard and Android WebView client to a Python server, SQLite records, and optional MATLAB inference. Not clinically validated.",
+    "tech": [
+      "Python",
+      "MATLAB",
+      "SQLite",
+      "Pillow",
+      "JavaScript",
+      "Android WebView"
+    ],
+    "arch": "Browser or Android WebView → Python HTTP server → SQLite + optional MATLAB batch inference",
+    "metrics": [
+      "Patient intake, image upload, and image-quality checks",
+      "Optional grading with a separately supplied MATLAB model",
+      "Quality-only results when the model is unavailable",
+      "Reviewer notes and print-to-PDF reports; Android client requires the local server"
+    ],
+    "repo": "https://github.com/Patel154/Diabetic-Retinopathy-Screening--SIH-2026-"
+  }
+],
 
   skills: {
-    rings: [
-      {
-        name: 'Full-Stack Web', pct: 92, color: '#2997ff',
-        detail: 'React · Next.js · Flask'
-      },
-      {
-        name: 'Android & Mobile', pct: 86, color: '#30d158',
-        detail: 'Kotlin · MVVM · Room'
-      },
-      {
-        name: 'AI & LLMs', pct: 88, color: '#bf5af2',
-        detail: 'Gemini · Ollama · Benchmarking'
-      },
-      {
-        name: 'IoT & Embedded', pct: 85, color: '#ff9f0a',
-        detail: 'ESP32 · MQTT · MediaPipe'
-      }
-    ],
-
-    groups: [
-      {
-        title: 'Languages',
-        items: ['JavaScript', 'TypeScript', 'Python', 'Kotlin', 'C / C++', 'SQL']
-      },
-      {
-        title: 'Web & Frameworks',
-        items: ['React', 'Next.js 14', 'Flask', 'Tailwind CSS', 'HTML5 / CSS3', 'REST APIs']
-      },
-      {
-        title: 'Backend & Databases',
-        items: ['SQLAlchemy', 'PostgreSQL', 'SQLite', 'Firebase Firestore', 'Room DB', 'Firebase Auth']
-      },
-      {
-        title: 'AI & Machine Learning',
-        items: ['Google Gemini API', 'Prompt Engineering', 'Ollama', 'DeepSeek-R1', 'Llama 3.2', 'Pandas']
-      },
-      {
-        title: 'Mobile & Embedded',
-        items: ['Android SDK', 'MVVM', 'LiveData', 'ESP32', 'Raspberry Pi', 'MQTT']
-      }
-    ]
-  },
+  "rings": [
+    {
+      "name": "Full-Stack Web",
+      "color": "#2997ff",
+      "detail": "React · Next.js · Flask · PHP"
+    },
+    {
+      "name": "Data & NLP",
+      "color": "#30d158",
+      "detail": "scikit-learn · NLTK · Pandas"
+    },
+    {
+      "name": "AI Integration",
+      "color": "#bf5af2",
+      "detail": "Streaming APIs · MATLAB"
+    },
+    {
+      "name": "Data & Clients",
+      "color": "#ff9f0a",
+      "detail": "SQL · Android WebView"
+    }
+  ],
+  "groups": [
+    {
+      "title": "Languages",
+      "items": [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "PHP",
+        "SQL",
+        "MATLAB",
+        "HTML / CSS"
+      ]
+    },
+    {
+      "title": "Web & Interfaces",
+      "items": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Three.js",
+        "Chart.js",
+        "Android WebView"
+      ]
+    },
+    {
+      "title": "Backend & Databases",
+      "items": [
+        "Flask",
+        "PostgreSQL",
+        "SQLite",
+        "MySQL",
+        "PDO",
+        "Session Authentication",
+        "REST APIs"
+      ]
+    },
+    {
+      "title": "Machine Learning & NLP",
+      "items": [
+        "scikit-learn",
+        "NLTK",
+        "Pandas",
+        "NumPy",
+        "TF-IDF",
+        "Sentiment Analysis",
+        "LDA Topic Modeling"
+      ]
+    },
+    {
+      "title": "Integration & Data Tools",
+      "items": [
+        "Server-Sent Events",
+        "PDF Text Extraction",
+        "Pillow",
+        "Matplotlib",
+        "Seaborn",
+        "CSV Processing"
+      ]
+    }
+  ]
+},
 
   experience: [
     {
@@ -244,12 +293,12 @@ const DATA = {
   awards: [
     {
       title: 'INCEPTRIX 2026',
-      desc: 'National Finals — Shipped Vastu AI marketplace with 60+ REST endpoints.',
+      desc: 'National Finals — Software development hackathon.',
       year: '2026'
     },
     {
       title: 'NavaNIEti 2026',
-      desc: '24-hour IoT champion — Gesture-activated nurse call system.',
+      desc: '24-hour IoT hackathon champion.',
       year: '2026'
     },
     {
@@ -309,6 +358,10 @@ function initTheme() {
 
   function apply(theme) {
     document.documentElement.dataset.theme = theme;
+    const logoPath = 'assets/mp-rainbow.svg';
+    const logo = document.querySelector('.brand-mark');
+    if (logo) logo.src = logoPath;
+    if ($('siteFavicon')) $('siteFavicon').href = 'assets/mp-rainbow-favicon.svg';
 
     if (button) {
       const next = theme === 'dark' ? 'light' : 'dark';
@@ -547,9 +600,8 @@ function initProjects() {
   const filters = [
     ['all', 'All files'],
     ['fullstack', 'Full-Stack'],
-    ['ai', 'AI & LLMs'],
-    ['mobile', 'Android'],
-    ['iot', 'IoT']
+    ['ai', 'AI & Data'],
+    ['mobile', 'Android']
   ];
 
   bar.setAttribute('role', 'group');
@@ -638,50 +690,19 @@ function openSheet(id) {
 function renderSkills() {
   const row = $('ringsRow');
   const groups = $('skillGroups');
-  const circumference = 2 * Math.PI * 36;
+  const categorySymbols = ['&lt;/&gt;', '{…}', 'API', 'SQL'];
 
   if (row) {
-    row.innerHTML = DATA.skills.rings.map(ring => `
+    row.innerHTML = DATA.skills.rings.map((ring, index) => `
       <div class="ring-cell">
-        <svg class="ring-svg" width="80" height="80"
-          viewBox="0 0 80 80" aria-hidden="true">
-          <circle cx="40" cy="40" r="36" fill="none"
-            stroke="${ring.color}" stroke-width="8" opacity=".18"/>
-          <circle class="skill-ring" cx="40" cy="40" r="36"
-            fill="none" stroke="${ring.color}" stroke-width="8"
-            stroke-linecap="round" transform="rotate(-90 40 40)"
-            stroke-dasharray="${circumference}"
-            stroke-dashoffset="${circumference}"
-            data-offset="${circumference * (1 - ring.pct / 100)}"/>
-        </svg>
+        <span class="toolkit-symbol" aria-hidden="true">${categorySymbols[index]}</span>
         <p class="ring-name">${escapeHTML(ring.name)}</p>
         <p class="ring-detail">
-          ${ring.pct}% self-assessed<br>${escapeHTML(ring.detail)}
+          ${escapeHTML(ring.detail)}
         </p>
       </div>
     `).join('');
 
-    const reveal = () => {
-      row.querySelectorAll('.skill-ring').forEach((ring, index) => {
-        ring.style.transition = reducedMotion.matches
-          ? 'none'
-          : `stroke-dashoffset 1.1s ease ${index * 100}ms`;
-        ring.style.strokeDashoffset = ring.dataset.offset;
-      });
-    };
-
-    if ('IntersectionObserver' in window && !reducedMotion.matches) {
-      const observer = new IntersectionObserver(entries => {
-        if (entries.some(entry => entry.isIntersecting)) {
-          reveal();
-          observer.disconnect();
-        }
-      }, { threshold: .15 });
-
-      observer.observe(row);
-    } else {
-      reveal();
-    }
   }
 
   if (groups) {
@@ -783,7 +804,8 @@ function initTerminal() {
     button.addEventListener('click', openTerminal);
   });
 
-  const shortcutBar = document.createElement('div');
+  const shortcutBar = $('termShortcuts') || document.createElement('div');
+  shortcutBar.replaceChildren();
   shortcutBar.className = 'term-shortcuts';
   shortcutBar.setAttribute('role', 'group');
   shortcutBar.setAttribute('aria-label', 'Run a terminal command');
@@ -812,7 +834,7 @@ function initTerminal() {
   const commands = new Map([
     ['help', () => {
       print('whoami       About me');
-      print('projects     List my seven projects');
+      print(`projects     List my ${DATA.projects.length} projects`);
       print('experience   Internships and work');
       print('skills       My toolkit');
       print('education    Academic background');
@@ -828,7 +850,7 @@ function initTerminal() {
     }],
     ['whoami', () => {
       print(`${PROFILE.name} — CS Engineering @ Jain University, Bengaluru.`);
-      print('I build full-stack web apps, Android apps, AI tools, and IoT systems.');
+      print('I build web platforms, AI workspaces, and data-driven tools.');
     }],
     ['projects', () => {
       DATA.projects.forEach(project => {
@@ -897,6 +919,13 @@ function initTerminal() {
     body.scrollTop = body.scrollHeight;
   }
 
+  $('termForm')?.addEventListener('submit', event => {
+    event.preventDefault();
+    const value = input.value;
+    input.value = '';
+    run(value);
+  });
+
   input.addEventListener('keydown', event => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -943,7 +972,7 @@ function initNavigation() {
   const links = [
     ...document.querySelectorAll('.nav-links a, .desktop-dock a[href^="#"]')
   ];
-  const sections = ['hero', 'projects', 'skills', 'experience', 'contact']
+  const sections = ['hero', 'projects', 'skills', 'learning', 'experience', 'connect', 'contact']
     .map($)
     .filter(Boolean);
 
@@ -1045,7 +1074,7 @@ function initContact() {
   email.autocomplete = 'email';
   submit.textContent = 'Create email draft ↗';
 
-  const note = document.createElement('p');
+  const note = $('contactFormNote') || document.createElement('p');
   note.className = 'form-note';
   note.id = 'contactFormNote';
   note.textContent =
@@ -1054,7 +1083,7 @@ function initContact() {
 
   form.setAttribute('aria-describedby', note.id);
 
-  const status = document.createElement('p');
+  const status = $('contactStatus') || document.createElement('p');
   status.className = 'form-note';
   status.setAttribute('role', 'status');
   form.appendChild(status);
@@ -1092,6 +1121,7 @@ function boot() {
   initProjects();
   renderSkills();
   renderExperience();
+  renderLearning();
 
   initNavigation();
   initGlass();
@@ -1104,4 +1134,67 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', boot, { once: true });
 } else {
   boot();
+}
+
+/* ---------- Learning queue (from the GitHub profile README) ---------- */
+
+function renderLearning() {
+    const learning = [
+      {
+        title: 'Containerization & Deployment',
+        focus: 'Docker + basic CI/CD',
+        desc: 'Dockerfile optimization, multi-stage builds, and automated GitHub Actions pipelines.',
+        icon: '▣',
+        color: 'blue',
+        status: 'In progress',
+        statusClass: 'building'
+      },
+      {
+        title: 'Distributed Architectures',
+        focus: 'System design fundamentals',
+        desc: 'High-level architecture, load balancing, Redis caching, and microservice patterns.',
+        icon: '⌘',
+        color: 'purple',
+        status: 'Planned',
+        statusClass: 'planned'
+      },
+      {
+        title: 'Algorithmic Mastery',
+        focus: 'DSA & competitive programming',
+        desc: 'Advanced trees and graphs, dynamic programming, and space-time complexity optimization.',
+        icon: '{ }',
+        color: 'orange',
+        status: 'Daily sprint',
+        statusClass: 'daily'
+      },
+      {
+        title: 'Cloud & Edge AI',
+        focus: 'On-device inference & APIs',
+        desc: 'Edge deployment with MediaPipe, MQTT streaming, and Gemini API pipelines.',
+        icon: '✧',
+        color: 'teal',
+        status: 'Exploring',
+        statusClass: 'exploring'
+      }
+    ];
+
+    const learningList = document.getElementById('learningList');
+
+    if (learningList) {
+      learningList.innerHTML = learning.map(item => `
+        <li class="learning-item">
+          <span class="learning-icon learning-icon-${item.color}"
+            aria-hidden="true">${escapeHTML(item.icon)}</span>
+          <div class="learning-content">
+            <h3>${escapeHTML(item.title)}</h3>
+            <p class="learning-focus">${escapeHTML(item.focus)}</p>
+            <p>${escapeHTML(item.desc)}</p>
+          </div>
+          <span class="learning-status status-${item.statusClass}">
+            ${escapeHTML(item.status)}
+          </span>
+        </li>
+      `).join('');
+    }
+
 }

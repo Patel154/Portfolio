@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 96" fill="none">
+  <defs>
+    <clipPath id="letters" clipPathUnits="userSpaceOnUse">
+      <path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M6 72v-5c8 0 10-3 10-11V13c0-6-2-8-10-8V0h23l24 49L77 0h23v5c-8 0-10 2-10 8v43c0 8 2 11 10 11v5H66v-5c8 0 10-3 10-11V18L51 70h-4L22 18v38c0 8 3 11 11 11v5H6Zm96 24v-5c6 0 8-2 8-8V38c0-6-2-8-8-8v-5l21-3v8c4-6 9-9 15-9 15 0 22 12 22 26s-8 26-23 26c-6 0-10-2-14-6v16c0 6 2 8 10 8v5h-31Zm21-49c0 13 4 20 12 20s12-7 12-20-4-20-12-20-12 7-12 20Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#letters)">
+    <rect width="160" height="16" y="0" fill="#78BE20"/>
+    <rect width="160" height="16" y="16" fill="#FFC627"/>
+    <rect width="160" height="16" y="32" fill="#FF6619"/>
+    <rect width="160" height="16" y="48" fill="#CF0F2B"/>
+    <rect width="160" height="16" y="64" fill="#AD1DAA"/>
+    <rect width="160" height="16" y="80" fill="#00A1E0"/>
+  </g>
+</svg>
